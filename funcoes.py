@@ -38,16 +38,18 @@ def cadastrar():
         salvar_dados(usuarios)
         print("Usuário salvo com sucesso!")
 
-def excluir():
+def excluir(usuario_alvo):
+    print("DEBUG: A função excluir foi chamada com sucesso!") # <--- Adicione essa linha
     usuarios = carregar_dados()
-    user = input("DIgite o nome do usuário que deseja excluir: ")
-    if user in usuarios:
-        del usuarios[user]
+    
+    if usuario_alvo in usuarios:
+        del usuarios[usuario_alvo]
         salvar_dados(usuarios)
-        print(f"Usuário {user} excluído com sucesso!")
+        print(f"Usuário '{usuario_alvo}' excluído com sucesso.")
     else:
-        print(f"Erro: Usuário não encontrado. ")
+        print(f"Erro: O usuário '{usuario_alvo}' não foi encontrado.")
 
+        
 def listar_usuarios():
     usuarios = carregar_dados()
     print("\n--- Lista de Usuários ---")

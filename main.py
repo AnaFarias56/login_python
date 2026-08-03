@@ -20,12 +20,12 @@ while True:
         print(mensagem)
         
     elif opcao == "3":
-        user = input("Digite o nome do usuário que deseja excluir: ")
-        funcoes.excluir(user)
+        usuario_alvo = input("Digite o nome do usuário que deseja excluir: ")
+        funcoes.excluir(usuario_alvo)
 
     elif opcao == "4":
         funcoes.listar_usuarios()   
 
     elif opcao == "5":
         print("Saindo do sistema...")
-        break   
+        break  
