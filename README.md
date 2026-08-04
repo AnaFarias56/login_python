@@ -53,3 +53,7 @@ o desenvolvimento dos meus conhecimentos em Python.
 
 Este é um projeto educacional e ainda não implementa os mecanismos de
 segurança necessários para utilização como um sistema real de autenticação.
+
+## Atualização
+
+Implementação da função len() para criar uma validação de segurança no cadastro, garantindo que o sistema só aceite senhas com no mínimo 6 caracteres e evitando senhas fracas.

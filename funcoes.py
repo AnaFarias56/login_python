@@ -22,10 +22,16 @@ def registrar_usuario(usuario, senha):
     usuarios = carregar_dados()
     if usuario in usuarios:
         return False, "Erro: Usuário já existe."
+
+    if len(senha) <6:
+        return False, "Erro: A senha deve ter pelo menos 6 caracteres. "
+    
     else:
         usuarios[usuario] = senha
         salvar_dados(usuarios)
         return True, "Usuário registrado com sucesso!"
+
+    
 
 def cadastrar():
     usuarios = carregar_dados()
