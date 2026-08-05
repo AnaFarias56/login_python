@@ -58,7 +58,7 @@ segurança necessários para utilização como um sistema real de autenticação
 
 Implementação da função len() para criar uma validação de segurança no cadastro, garantindo que o sistema só aceite senhas com no mínimo 6 caracteres e evitando senhas fracas.
 
-## Atualição 05/08/2026
+## Atualização 05/08/2026
 - Implementado cadastro utilizando e-mail como identificação do usuário.
 - Adicionada validação para impedir cadastros fora do formato de e-mail definido.
 - Adicionado aviso para usuários cadastrados anteriormente com senhas menores que 6 caracteres.
