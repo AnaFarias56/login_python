@@ -54,6 +54,13 @@ o desenvolvimento dos meus conhecimentos em Python.
 Este é um projeto educacional e ainda não implementa os mecanismos de
 segurança necessários para utilização como um sistema real de autenticação.
 
-## Atualização
+## Atualização 04/08/2026
 
 Implementação da função len() para criar uma validação de segurança no cadastro, garantindo que o sistema só aceite senhas com no mínimo 6 caracteres e evitando senhas fracas.
+
+## Atualição 05/08/2026
+- Implementado cadastro utilizando e-mail como identificação do usuário.
+- Adicionada validação para impedir cadastros fora do formato de e-mail definido.
+- Adicionado aviso para usuários cadastrados anteriormente com senhas menores que 6 caracteres.
+- Removidos os arquivos `cadastro.py` e `sistema.py`, pois suas funcionalidades passaram a ser executadas pelo fluxo atual do programa.
+- Removida uma função antiga de cadastro que havia se tornado repetida.

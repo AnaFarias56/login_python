@@ -13,39 +13,42 @@ def salvar_dados(dados):
         json.dump(dados, arquivo, indent=4)
 
 
-def validar_login(usuario, senha):
+def validar_login(user, senha):
     usuarios = carregar_dados()
-    return usuario in usuarios and usuarios[usuario] == senha
+
+    if user in usuarios and usuarios[user] == senha:
+        if len(senha) < 6:
+            return False, "Aviso! Sua senha é muito curta e fora do novo padrão. Por favor, cadastre-se novamente com uma senha mais forte."
+        return True, "Login bem-sucedido!"
+    else:
+        return False, "Erro: Usuário ou senha incorretos."
+       
+       
 
 
-def registrar_usuario(usuario, senha):
-    usuarios = carregar_dados()
-    if usuario in usuarios:
-        return False, "Erro: Usuário já existe."
-
+def registrar_usuario(user, senha):
+    if "@" not in user or "." not in user:
+        return False, "Erro: O nome de usuário deve ser um e-mail válido."
+    
     if len(senha) <6:
-        return False, "Erro: A senha deve ter pelo menos 6 caracteres. "
+        return False, "Erro: A senha deve ter pelo menos 6 caracteres."
     
-    else:
-        usuarios[usuario] = senha
-        salvar_dados(usuarios)
-        return True, "Usuário registrado com sucesso!"
-
-    
-
-def cadastrar():
     usuarios = carregar_dados()
-    user = input("Digite o nome do usuário: ")
+
     if user in usuarios:
-        print("Erro: Usuário já existe.")
-    else:
-        senha = input("Digite sua senha: ")
-        usuarios[user] = senha
-        salvar_dados(usuarios)
-        print("Usuário salvo com sucesso!")
+        return False, "Erro: Este email já está em uso."
+
+    usuarios[user] = senha
+    salvar_dados(usuarios)
+    return True, "Usuário registrado com sucesso!"
+        
+def listar_usuarios():
+    usuarios = carregar_dados()
+    print("\n--- Lista de Usuários ---")
+    for usuario in usuarios:
+        print(f"- {usuario}")
 
 def excluir(usuario_alvo):
-    print("DEBUG: A função excluir foi chamada com sucesso!") # <--- Adicione essa linha
     usuarios = carregar_dados()
     
     if usuario_alvo in usuarios:
@@ -55,11 +58,5 @@ def excluir(usuario_alvo):
     else:
         print(f"Erro: O usuário '{usuario_alvo}' não foi encontrado.")
 
-        
-def listar_usuarios():
-    usuarios = carregar_dados()
-    print("\n--- Lista de Usuários ---")
-    for usuario in usuarios:
-        print(f"- {usuario}")
 
 
