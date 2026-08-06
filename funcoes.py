@@ -17,7 +17,7 @@ def validar_login(user, senha):
     usuarios = carregar_dados()
 
     if user in usuarios and usuarios[user] == senha:
-        if len(senha) < 6:
+        if len(senha.strip()) < 6:
             return False, "Aviso! Sua senha é muito curta e fora do novo padrão. Por favor, cadastre-se novamente com uma senha mais forte."
         return True, "Login bem-sucedido!"
     else:
@@ -27,10 +27,11 @@ def validar_login(user, senha):
 
 
 def registrar_usuario(user, senha):
+    user = user.strip()
     if "@" not in user or "." not in user:
         return False, "Erro: O nome de usuário deve ser um e-mail válido."
     
-    if len(senha) <6:
+    if len(senha.strip()) <6:
         return False, "Erro: A senha deve ter pelo menos 6 caracteres."
     
     usuarios = carregar_dados()

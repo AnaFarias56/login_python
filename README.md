@@ -64,3 +64,9 @@ Implementação da função len() para criar uma validação de segurança no ca
 - Adicionado aviso para usuários cadastrados anteriormente com senhas menores que 6 caracteres.
 - Removidos os arquivos `cadastro.py` e `sistema.py`, pois suas funcionalidades passaram a ser executadas pelo fluxo atual do programa.
 - Removida uma função antiga de cadastro que havia se tornado repetida.
+
+### Atualização 06/08/2026
+
+- Adicionado tratamento para opções inválidas no menu.
+- Melhorada a validação de senha para impedir senhas formadas apenas por espaços.
+- Iniciados testes de entradas inválidas no cadastro para melhorar o tratamento de dados informados pelo usuário.
